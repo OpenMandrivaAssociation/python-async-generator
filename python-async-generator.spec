@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.10
-Release:        %mkrel 2
+Release:        1
 Summary:        Async generators and context managers for Python 3
 Group:          Development/Python
 License:        MIT -or- Apache License 2.0
@@ -11,20 +11,14 @@ URL:            https://github.com/python-trio/async_generator
 Source0:        https://files.pythonhosted.org/packages/source/a/%{pypi_name}/async_generator-%{version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-sphinxcontrib_trio
+BuildRequires:  python-devel
+BuildRequires:  python-sphinxcontrib_trio
 BuildRequires:  python3dist(pytest)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(sphinx)
+%{?python_provide:%python_provide python-%{pypi_name}}
 
 %description
- :target:
-
-%package -n     python3-%{pypi_name}
-Summary:        %{summary}
-%{?python_provide:%python_provide python3-%{pypi_name}}
-
-%description -n python3-%{pypi_name}
  :target:
 
 %package -n python-%{pypi_name}-doc
@@ -38,23 +32,23 @@ Documentation for async-generator
 rm -rf %{pypi_name}.egg-info
 
 %build
-%py3_build
+%py_build
 # generate html docs
 PYTHONPATH=${PWD} sphinx-build-3 docs/source html
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
 
 %install
-%py3_install
+%py_install
 
 %check
-%{__python3} setup.py test
+%{__python} setup.py test
 
-%files -n python3-%{pypi_name}
+%files
 %license LICENSE.MIT LICENSE LICENSE.APACHE2
 %doc README.rst
-%{python3_sitelib}/async_generator
-%{python3_sitelib}/async_generator-%{version}-py?.?.egg-info
+%{python_sitelib}/async_generator
+%{python_sitelib}/async_generator-%{version}-py?.?.egg-info
 
 %files -n python-%{pypi_name}-doc
 %doc html

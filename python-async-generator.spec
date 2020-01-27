@@ -34,15 +34,15 @@ rm -rf %{pypi_name}.egg-info
 %build
 %py_build
 # generate html docs
-PYTHONPATH=${PWD} sphinx-build-3 docs/source html
+#PYTHONPATH=${PWD} sphinx-build-3 docs/source html
 # remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+#rm -rf html/.{doctrees,buildinfo}
 
 %install
 %py_install
 
-%check
-%{__python} setup.py test
+#check
+#{__python} setup.py test
 
 %files
 %license LICENSE.MIT LICENSE LICENSE.APACHE2

@@ -51,5 +51,5 @@ rm -rf %{pypi_name}.egg-info
 %{python_sitelib}/async_generator-%{version}-py?.?.egg-info
 
 %files -n python-%{pypi_name}-doc
-%doc html
+#doc html
 %license LICENSE.MIT LICENSE LICENSE.APACHE2

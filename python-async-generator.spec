@@ -13,7 +13,7 @@ BuildArch:      noarch
 
 BuildRequires:  python-devel
 BuildRequires:  python-sphinxcontrib_trio
-BuildRequires:  python3dist(pytest)
+#BuildRequires:  python3dist(pytest)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(sphinx)
 %{?python_provide:%python_provide python-%{pypi_name}}

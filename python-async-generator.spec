@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.10
-Release:        2
+Release:        3
 Summary:        Async generators and context managers for Python 3
 Group:          Development/Python
 License:        MIT -or- Apache License 2.0
@@ -48,7 +48,7 @@ rm -rf %{pypi_name}.egg-info
 %license LICENSE.MIT LICENSE LICENSE.APACHE2
 %doc README.rst
 %{python_sitelib}/async_generator
-%{python_sitelib}/async_generator-%{version}-py?.?.egg-info
+%{python_sitelib}/async_generator-%{version}-py*.*.egg-info
 
 %files -n python-%{pypi_name}-doc
 #doc html

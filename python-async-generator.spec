@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.10
-Release:        4
+Release:        5
 Summary:        Async generators and context managers for Python 3
 Group:          Development/Python
 License:        MIT -or- Apache License 2.0

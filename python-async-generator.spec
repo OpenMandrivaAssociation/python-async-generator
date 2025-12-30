@@ -2,7 +2,7 @@
 
 Name:           python-async-generator
 Version:        1.10
-Release:        6
+Release:        7
 Summary:        Async generators and context managers for Python 3
 Group:          Development/Python
 License:        MIT -or- Apache License 2.0
